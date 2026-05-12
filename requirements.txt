@@ -1,0 +1,8 @@
+kagglehub
+wordcloud
+langdetect
+matplotlib
+seaborn
+pandas
+bertopic
+nbformat>=4.2.0
