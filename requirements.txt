@@ -6,3 +6,6 @@ seaborn
 pandas
 bertopic
 nbformat>=4.2.0
+ipywidgets
+transformers 
+scikit-learn
