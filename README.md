@@ -11,7 +11,7 @@ Suicide is a leading public health concern: in 2024 alone, 48,824 suicide-relate
 
 ## Overview
 
-This project builds a binary text classification system to identify suicidal ideation in social media text. Using the [Kaggle Suicide Watch dataset](https://www.kaggle.com/datasets/nikhileswarkomati/suicide-watch) (232,074 Reddit posts), we systematically compare six classical TF-IDF models against two fine-tuned transformer architectures — BERT and Longformer — and conduct unsupervised topic discovery via BERTopic.
+This project builds a binary text classification system to identify suicidal ideation in social media text. Using the [Kaggle Suicide Watch dataset](https://www.kaggle.com/datasets/nikhileswarkomati/suicide-watch) (232,074 Reddit posts), we systematically compare six classical TF-IDF models against two fine-tuned transformer architectures(BERT and Longformer)and conduct unsupervised topic discovery via BERTopic.
 
 ---
 ## EDA Highlights
@@ -35,7 +35,7 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 
 ## Results
 **Performance Heatmap: All 8 Models**
-<img width="798" height="690" alt="preview (1)" src="https://github.com/user-attachments/assets/10adaf6f-b159-4621-9106-40243980b91e" />
+<img width="900" height="690" alt="preview (1)" src="https://github.com/user-attachments/assets/10adaf6f-b159-4621-9106-40243980b91e" />
 
 | Model | Accuracy | F1 | Precision | Recall | AUC |
 |---|---|---|---|---|---|
@@ -46,12 +46,13 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 | Naive Bayes (Unigrams) | 0.878 | 0.890 | 0.831 | 0.957 | 0.961 |
 
 **Accuracy & F1 Score: Classical vs Deep Learning**
-<img width="989" height="790" alt="preview (2)" src="https://github.com/user-attachments/assets/14e9c2ae-8823-484f-8327-5d826ccb7e42" />
+<img width="900" height="790" alt="preview (2)" src="https://github.com/user-attachments/assets/14e9c2ae-8823-484f-8327-5d826ccb7e42" />
 
 **ROC Curves: All 8 Models**
-<img width="1568" height="680" alt="preview" src="https://github.com/user-attachments/assets/58cbf470-2b68-42cc-a50e-88e7a50470de" />
+<img width="900" height="680" alt="preview" src="https://github.com/user-attachments/assets/58cbf470-2b68-42cc-a50e-88e7a50470de" />
 
 **Key finding:** Longformer outperformed BERT by 0.018 in recall, demonstrating that preserving full post context,rather than truncating the middle, provides meaningful signal for high-risk content detection, even on short posts under 100 words.
+![alt text](image-4.png)
 
 ---
 
