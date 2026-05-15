@@ -46,10 +46,10 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 | Naive Bayes (Unigrams) | 0.878 | 0.890 | 0.831 | 0.957 | 0.961 |
 
 **Accuracy & F1 Score: Classical vs Deep Learning**
-<img width="900" height="790" alt="preview (2)" src="https://github.com/user-attachments/assets/14e9c2ae-8823-484f-8327-5d826ccb7e42" />
+<img width="900" height="680" alt="preview" src="https://github.com/user-attachments/assets/58cbf470-2b68-42cc-a50e-88e7a50470de" />
 
 **ROC Curves: All 8 Models**
-<img width="900" height="680" alt="preview" src="https://github.com/user-attachments/assets/58cbf470-2b68-42cc-a50e-88e7a50470de" />
+<img width="900" height="790" alt="preview (2)" src="https://github.com/user-attachments/assets/14e9c2ae-8823-484f-8327-5d826ccb7e42" />
 
 **Key finding:** Longformer outperformed BERT by 0.018 in recall, demonstrating that preserving full post context,rather than truncating the middle, provides meaningful signal for high-risk content detection, even on short posts under 100 words.
 ![alt text](image-4.png)
