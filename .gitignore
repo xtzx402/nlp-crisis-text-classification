@@ -6,3 +6,5 @@ results/
 *.pt
 *.bin
 checkpoint-*/
+results/checkpoint-488/
+results/checkpoint-*/
