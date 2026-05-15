@@ -16,15 +16,18 @@ This project builds a binary text classification system to identify suicidal ide
 ---
 ## EDA Highlights
 
-Word Frequency by Class
+Word Frequency by Class  
+
 Suicidal posts showed more emotionally intense and self-focused language; non-suicidal posts contained broader conversational vocabulary.
 ![alt text](image-1.png)
 
-Sentiment Score Distribution (VADER)
+Sentiment Score Distribution (VADER)  
+
 Suicidal posts had a significantly lower average compound sentiment score (−0.388) compared to non-suicidal posts (0.101), confirming emotional tone as a useful classification signal.
 ![alt text](image.png)
 
-BERTopic: Unsupervised Topic Discovery
+BERTopic: Unsupervised Topic Discovery  
+
 BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K corpus without labels. The majority of suicide-labeled documents clustered into Topic 0, validating that the textual content is semantically distinct across classes.
 ![alt text](image-2.png)
 ![alt text](image-3.png)
