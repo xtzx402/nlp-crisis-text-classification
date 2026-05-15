@@ -46,7 +46,7 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 <img width="900" height="690" alt="preview (1)" src="https://github.com/user-attachments/assets/10adaf6f-b159-4621-9106-40243980b91e" />
 
 **Accuracy & F1 Score: Classical vs Deep Learning**
-<img width="900" height="680" alt="preview" src="https://github.com/user-attachments/assets/58cbf470-2b68-42cc-a50e-88e7a50470de" />
+<img width="900" alt="preview" src="https://github.com/user-attachments/assets/58cbf470-2b68-42cc-a50e-88e7a50470de" />
 
 **ROC Curves: All 8 Models**
 <img width="900" height="790" alt="preview (2)" src="https://github.com/user-attachments/assets/14e9c2ae-8823-484f-8327-5d826ccb7e42" />
