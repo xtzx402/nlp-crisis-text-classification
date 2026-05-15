@@ -34,9 +34,6 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 ![alt text](Image_2026-05-15_113157_793.png)
 
 ## Results
-**Performance Heatmap: All 8 Models**
-<img width="900" height="690" alt="preview (1)" src="https://github.com/user-attachments/assets/10adaf6f-b159-4621-9106-40243980b91e" />
-
 | Model | Accuracy | F1 | Precision | Recall | AUC |
 |---|---|---|---|---|---|
 | **Longformer-base-4096** | **0.977** | **0.978** | **0.967** | **0.990** | **0.997** |
@@ -44,6 +41,9 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 | SVC (Unigrams) | 0.909 | 0.910 | 0.926 | 0.895 | 0.964 |
 | Logistic Regression (Unigrams) | 0.902 | 0.903 | 0.918 | 0.888 | 0.962 |
 | Naive Bayes (Unigrams) | 0.878 | 0.890 | 0.831 | 0.957 | 0.961 |
+
+**Performance Heatmap: All 8 Models**
+<img width="900" height="690" alt="preview (1)" src="https://github.com/user-attachments/assets/10adaf6f-b159-4621-9106-40243980b91e" />
 
 **Accuracy & F1 Score: Classical vs Deep Learning**
 <img width="900" height="680" alt="preview" src="https://github.com/user-attachments/assets/58cbf470-2b68-42cc-a50e-88e7a50470de" />
