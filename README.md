@@ -52,7 +52,7 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 ![assets/ROC.png](assets/ROC.png)
 
 **Key finding:** Longformer outperformed BERT by 0.018 in recall, demonstrating that preserving full post context,rather than truncating the middle, provides meaningful signal for high-risk content detection, even on short posts under 100 words.
-![alt text](bertVSlongformer.png)
+![alt text](assets/bertVSlongformer.png)
 
 ---
 
