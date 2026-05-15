@@ -4,31 +4,49 @@ An end-to-end NLP pipeline comparing 8 models (classical ML and transformer-base
 
 ---
 
+## Background
+Suicide is a leading public health concern: in 2024 alone, 48,824 suicide-related deaths were recorded in the U.S., with an estimated 14.3 million adults reporting suicidal thoughts. Psychological distress is increasingly expressed on social media platforms like Reddit, making automated early detection a meaningful research and applied problem. This project explores whether NLP models can reliably distinguish crisis-related posts from general discourse.
+
+---
+
 ## Overview
 
 This project builds a binary text classification system to identify suicidal ideation in social media text. Using the [Kaggle Suicide Watch dataset](https://www.kaggle.com/datasets/nikhileswarkomati/suicide-watch) (232,074 Reddit posts), we systematically compare six classical TF-IDF models against two fine-tuned transformer architectures — BERT and Longformer — and conduct unsupervised topic discovery via BERTopic.
 
 ---
+## EDA Highlights
+
+Word Frequency by Class
+Suicidal posts showed more emotionally intense and self-focused language; non-suicidal posts contained broader conversational vocabulary.
+![alt text](image-1.png)
+
+Sentiment Score Distribution (VADER)
+Suicidal posts had a significantly lower average compound sentiment score (−0.388) compared to non-suicidal posts (0.101), confirming emotional tone as a useful classification signal.
+![alt text](image.png)
+
+BERTopic: Unsupervised Topic Discovery
+BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K corpus without labels. The majority of suicide-labeled documents clustered into Topic 0, validating that the textual content is semantically distinct across classes.
+![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](Image_2026-05-15_113157_793.png)
 
 ## Results
-
-### Deep Learning Models
+Performance Heatmap: All 8 Models
+<img width="798" height="690" alt="preview (1)" src="https://github.com/user-attachments/assets/10adaf6f-b159-4621-9106-40243980b91e" />
 
 | Model | Accuracy | F1 | Precision | Recall | AUC |
 |---|---|---|---|---|---|
-| **Longformer-base-4096** | **0.977** | **0.978** | 0.967 | **0.990** | **0.997** |
-| BERT-base-cased (Head+Tail) | 0.965 | 0.966 | — | — | 0.993 |
+| **Longformer-base-4096** | **0.977** | **0.978** | **0.967** | **0.990** | **0.997** |
+| BERT-base-cased (Head+Tail) | 0.965 | 0.966 | 0.961 | 0.972 | 0.993 |
+| SVC (Unigrams) | 0.909 | 0.910 | 0.926 | 0.895 | 0.964 |
+| Logistic Regression (Unigrams) | 0.902 | 0.903 | 0.918 | 0.888 | 0.962 |
+| Naive Bayes (Unigrams) | 0.878 | 0.890 | 0.831 | 0.957 | 0.961 |
 
-### Classical Models (TF-IDF, top performers)
+Accuracy & F1 Score: Classical vs Deep Learning
 <img width="989" height="790" alt="preview (2)" src="https://github.com/user-attachments/assets/14e9c2ae-8823-484f-8327-5d826ccb7e42" />
-<img width="798" height="690" alt="preview (1)" src="https://github.com/user-attachments/assets/10adaf6f-b159-4621-9106-40243980b91e" />
-<img width="1568" height="680" alt="preview" src="https://github.com/user-attachments/assets/58cbf470-2b68-42cc-a50e-88e7a50470de" />
 
-| Model | Accuracy | F1 | AUC |
-|---|---|---|---|
-| SVC (Unigrams) | 0.909 | 0.910 | 0.964 |
-| Logistic Regression (Unigrams) | 0.901 | 0.904 | 0.962 |
-| Naive Bayes (Unigrams) | 0.878 | — | — |
+ROC Curves: All 8 Models
+<img width="1568" height="680" alt="preview" src="https://github.com/user-attachments/assets/58cbf470-2b68-42cc-a50e-88e7a50470de" />
 
 **Key finding:** Longformer outperformed BERT by 0.018 in recall, demonstrating that preserving full post context — rather than truncating the middle — provides meaningful signal for high-risk content detection, even on short posts under 100 words.
 
@@ -118,6 +136,14 @@ All models evaluated on Accuracy, F1, Precision, Recall, and AUC-ROC. Recall was
 - Naive Bayes showed notably high recall (0.938–0.957) at the cost of precision
 - Suicidal posts showed significantly lower VADER sentiment scores (avg: -0.388 vs 0.101 for non-suicidal)
 - BERTopic revealed semantically distinct topic clusters between classes without label supervision
+
+---
+
+## Limitations & Future Work
+
+- **Data coverage:** Trained on English Reddit only; performance on other languages and platforms remains unknown. Future work could explore multilingual models such as mBERT or XLM-R
+- **Task granularity:** Binary labels cannot reflect real-world risk severity; a natural next step is multi-class risk grading aligned with clinical instruments (e.g. Columbia Suicide Severity Rating Scale)
+- **Explainability:** No interpretability layer currently; applying SHAP or LIME would enable token-level explanations suitable for clinical or platform deployment
 
 ---
 
