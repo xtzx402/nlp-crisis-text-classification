@@ -86,7 +86,7 @@ nlp-crisis-text-classification/
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/YOUR_USERNAME/nlp-crisis-text-classification.git
+git clone https://github.com/xtzx402/nlp-crisis-text-classification.git
 cd nlp-crisis-text-classification
 ```
 
