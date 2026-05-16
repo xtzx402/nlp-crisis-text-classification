@@ -34,21 +34,24 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 ![assets/Image_2026-05-15_113157_793.png](assets/Image_2026-05-15_113157_793.png)
 
 ## Results
-| Model | Accuracy | F1 | Precision | Recall | AUC |
-|---|---|---|---|---|---|
-| **Longformer-base-4096** | **0.977** | **0.978** | **0.967** | **0.990** | **0.997** |
-| BERT-base-cased (Head+Tail) | 0.965 | 0.966 | 0.961 | 0.972 | 0.993 |
-| SVC (Unigrams) | 0.909 | 0.910 | 0.926 | 0.895 | 0.964 |
-| Logistic Regression (Unigrams) | 0.902 | 0.903 | 0.918 | 0.888 | 0.962 |
-| Naive Bayes (Unigrams) | 0.878 | 0.890 | 0.831 | 0.957 | 0.961 |
+| # | Model | Type | Accuracy | F1 | Precision | Recall | AUC |
+|---|-------|------|----------|----|-----------|--------|-----|
+| 0 | SVC (Unigrams) | Classical | 0.9099 | 0.9106 | 0.9275 | 0.8942 | 0.966 |
+| 1 | SVC (Unigrams+Bigrams) | Classical | 0.9124 | 0.9126 | 0.9351 | 0.8912 | 0.965 |
+| 2 | Naive Bayes (Unigrams) | Classical | 0.8730 | 0.8855 | 0.8239 | 0.9571 | 0.962 |
+| 3 | Naive Bayes (Unigrams+Bigrams) | Classical | 0.8879 | 0.8956 | 0.8575 | 0.9371 | 0.961 |
+| 4 | Logistic Regression (Unigrams) | Classical | 0.9089 | 0.9089 | 0.9328 | 0.8862 | 0.964 |
+| 5 | Logistic Regression (Unigrams+Bigrams) | Classical | 0.9089 | 0.9091 | 0.9310 | 0.8882 | 0.964 |
+| 6 | BERT (Head+Tail) | Deep Learning | 0.9632 | 0.9643 | 0.9586 | 0.9701 | 0.990 |
+| 7 | Longformer | Deep Learning | 0.9744 | 0.9752 | 0.9685 | 0.9820 | 0.998 |
 
-**Performance Heatmap: All 8 Models**  
+**Performance Heatmap: All 8 Models**   
 ![assets/HEATMAP.png](assets/HEATMAP.png) 
 
-**Accuracy & F1 Score: Classical vs Deep Learning**
+**Accuracy & F1 Score: Classical vs Deep Learning**  
 ![assets/Acc-f1.png](assets/Acc-f1.png)
 
-**ROC Curves: All 8 Models**
+**ROC Curves: All 8 Models**  
 ![assets/ROC.png](assets/ROC.png)
 
 **Key finding:** Longformer outperformed BERT by 0.018 in recall, demonstrating that preserving full post context,rather than truncating the middle, provides meaningful signal for high-risk content detection, even on short posts under 100 words.
@@ -56,7 +59,7 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 
 ---
 
-## Project Structure
+## Project Structure  
 
 ```
 nlp-crisis-text-classification/
