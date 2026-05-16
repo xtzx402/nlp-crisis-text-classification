@@ -43,7 +43,7 @@ BERTopic (UMAP + HDBSCAN + sentence embeddings) was applied to the full 232K cor
 | Naive Bayes (Unigrams) | 0.878 | 0.890 | 0.831 | 0.957 | 0.961 |
 
 **Performance Heatmap: All 8 Models**
-![assets/HEATMAP.png](assets/HEATMAP.png)
+![assets/HEATMAP.png](assets/HEATMAP.png) 
 
 **Accuracy & F1 Score: Classical vs Deep Learning**
 ![assets/Acc-f1.png](assets/Acc-f1.png)
